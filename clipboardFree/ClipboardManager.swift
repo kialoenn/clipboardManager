@@ -7,7 +7,7 @@ class ClipboardManager: ObservableObject {
     private var textSet: Set<String> = []
     private var timer: Timer?
     private let maxHistorySize = 25
-    private let maxItemSize: Int = 4 * 1024 * 1024 // 4 MB in bytes
+    private let maxItemSize: Int = 4 * 1024 * 1024 // 4 MB in bytes random test
 
     init() {
         startClipboardMonitoring()
