@@ -8,19 +8,16 @@ class ClipboardManager: ObservableObject {
     private var timer: Timer?
     private let maxHistorySize = 25
     private let maxItemSize: Int = 4 * 1024 * 1024 // 4 MB in bytes random test
-
+    
     init() {
         startClipboardMonitoring()
     }
-
+    
     func startClipboardMonitoring() {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(checkClipboard), userInfo: nil, repeats: true)
     }
-
-    @objc func checkClipboard() {
-        let pasteboard = NSPasteboard.general
-
-        // Check for text
+    
+    fileprivate func checkCopiedText(_ pasteboard: NSPasteboard) {
         if let copiedText = pasteboard.string(forType: .string) {
             if textSet.contains(copiedText) {
                 // Text already exists in the history
@@ -30,8 +27,9 @@ class ClipboardManager: ObservableObject {
                 }
             }
         }
-
-        // Check for images
+    }
+    
+    fileprivate func checkCopiedImage(_ pasteboard: NSPasteboard) {
         if let copiedImage = pasteboard.data(forType: .tiff), let image = NSImage(data: copiedImage) {
             if case let .image(lastImage) = clipboardHistory.last, lastImage.tiffRepresentation == image.tiffRepresentation {
                 // Already in history
@@ -41,8 +39,9 @@ class ClipboardManager: ObservableObject {
                 }
             }
         }
-
-        // Check for files
+    }
+    
+    fileprivate func checkCopiedFile(_ pasteboard: NSPasteboard) {
         if let copiedFiles = pasteboard.propertyList(forType: .fileURL) as? [String], !copiedFiles.isEmpty {
             if case let .file(lastFiles) = clipboardHistory.last, lastFiles == copiedFiles.first {
                 // Already in history
@@ -57,6 +56,13 @@ class ClipboardManager: ObservableObject {
                 }
             }
         }
+    }
+    
+    @objc func checkClipboard() {
+        let pasteboard = NSPasteboard.general
+        checkCopiedText(pasteboard)
+        checkCopiedImage(pasteboard)
+        checkCopiedFile(pasteboard)
     }
     
     private func addClipboardItem(_ item: ClipboardItem) {
@@ -90,7 +96,7 @@ class ClipboardManager: ObservableObject {
         }
         return 0
     }
-
+    
     func copyToClipboard(item: ClipboardItem) {
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()
