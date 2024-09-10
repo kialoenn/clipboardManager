@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct clipboardFreeApp: App {
+struct Clipboard: App {
     @StateObject private var clipboardManager = ClipboardManager()
     
     var body: some Scene {

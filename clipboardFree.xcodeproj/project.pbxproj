@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD1D52552C7FDB87002EEE97 /* clipboardFreeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1D52542C7FDB87002EEE97 /* clipboardFreeApp.swift */; };
+		FD1D52552C7FDB87002EEE97 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1D52542C7FDB87002EEE97 /* Clipboard.swift */; };
 		FD1D52572C7FDB87002EEE97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1D52562C7FDB87002EEE97 /* ContentView.swift */; };
 		FD1D52592C7FDB88002EEE97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1D52582C7FDB88002EEE97 /* Assets.xcassets */; };
 		FD1D525C2C7FDB88002EEE97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD1D525B2C7FDB88002EEE97 /* Preview Assets.xcassets */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		FD1D52512C7FDB87002EEE97 /* clipboardFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clipboardFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD1D52542C7FDB87002EEE97 /* clipboardFreeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clipboardFreeApp.swift; sourceTree = "<group>"; };
+		FD1D52542C7FDB87002EEE97 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		FD1D52562C7FDB87002EEE97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FD1D52582C7FDB88002EEE97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD1D525B2C7FDB88002EEE97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 		FD1D52532C7FDB87002EEE97 /* clipboardFree */ = {
 			isa = PBXGroup;
 			children = (
-				FD1D52542C7FDB87002EEE97 /* clipboardFreeApp.swift */,
+				FD1D52542C7FDB87002EEE97 /* Clipboard.swift */,
 				FD1D52562C7FDB87002EEE97 /* ContentView.swift */,
 				FD1D52582C7FDB88002EEE97 /* Assets.xcassets */,
 				FD1D525D2C7FDB88002EEE97 /* clipboardFree.entitlements */,
@@ -268,7 +268,7 @@
 				FD1D52572C7FDB87002EEE97 /* ContentView.swift in Sources */,
 				FD1D52822C7FDDDA002EEE97 /* ClipboardItem.swift in Sources */,
 				FD1D52802C7FDD37002EEE97 /* ClipboardManager.swift in Sources */,
-				FD1D52552C7FDB87002EEE97 /* clipboardFreeApp.swift in Sources */,
+				FD1D52552C7FDB87002EEE97 /* Clipboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
